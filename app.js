@@ -45,8 +45,11 @@ app.use(indexRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
-
-
-app.listen(3000,function(){
-	console.log("Movie app has started!!!");
+var port_number = app.listen(process.env.PORT || 3000);
+app.listen(port_number,function(){
+	console.log("App has started!!!");
 });
+
+// app.listen(3000,function(){
+// 	console.log("Movie app has started!!!");
+// });
